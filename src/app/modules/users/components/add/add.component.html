@@ -1,0 +1,48 @@
+<form [formGroup]="form">
+
+  <div class="form-field">
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+
+      <input matInput type="text" placeholder="Teodor" formControlName="username">
+
+      <mat-error *ngIf="form.get('username')?.invalid">{{getErrorMessage('username')}}</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-field">
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+
+      <input matInput type="email" placeholder="example@gmail.com" formControlName="email">
+
+      <mat-error *ngIf="form.get('email')?.invalid">{{getErrorMessage('email')}}</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-field">
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+
+      <input matInput type="{{seePassword ? 'text' : 'password'}}" placeholder="lEHjw9#9u3Bs"
+             formControlName="password">
+      <button class="show-pass" (click)="showPass($event)">{{seePassword ? 'hide' : 'show'}}</button>
+
+      <mat-error *ngIf="form.get('password')?.invalid">{{getErrorMessage('password')}}</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="form-field">
+    <mat-form-field appearance="outline">
+      <mat-label>Age</mat-label>
+
+      <input matInput type="number" placeholder="18" formControlName="age">
+
+      <mat-error *ngIf="form.get('age')?.invalid">{{getErrorMessage('age')}}</mat-error>
+    </mat-form-field>
+  </div>
+
+
+  <button mat-raised-button color="primary" class="submit" (click)="add()">Add</button>
+
+</form>

@@ -1,0 +1,45 @@
+<div class="container">
+
+  <h1 mat-dialog-title>Hi, {{data.username}}</h1>
+
+  <div mat-dialog-content>
+    <p>Edit your profile!</p>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput [(ngModel)]="data.username" required>
+      <mat-error>Username is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Login</mat-label>
+      <input email="true" matInput [(ngModel)]="data.email" required>
+      <mat-error>Email is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Age</mat-label>
+      <input type="number" matInput min=0 max=125 [(ngModel)]="data.age">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input type="password" minlength="8" matInput [(ngModel)]="data.password" required>
+      <mat-error>Must contain at least 8 characters</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Confirm password</mat-label>
+      <input type="password" minlength="8" matInput [(ngModel)]="data.confirmPassword" required>
+      <mat-error>Must contain at least 8 characters</mat-error>
+    </mat-form-field>
+
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button (click)="cancel()">Close</button>
+
+    <button mat-raised-button color="accent" [mat-dialog-close]="data" cdkFocusInitial>Update</button>
+  </div>
+
+</div>

@@ -1,0 +1,18 @@
+div {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5%;
+  padding: 5px;
+
+  > img {
+    width: 100px;
+  }
+
+  > a.active {
+
+    color: orangered;
+    text-decoration-line: underline;
+  }
+}

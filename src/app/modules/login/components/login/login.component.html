@@ -1,0 +1,23 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <mat-form-field appearance="outline">
+    <mat-label>Username</mat-label>
+
+    <input matInput type="text" placeholder="BorisJohnsonUK" formControlName="username">
+
+    <mat-error *ngIf="form.get('username')?.invalid">{{getErrorMessage('username')}}</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+
+    <input matInput type="{{seePassword ? 'text' : 'password'}}" placeholder="lEHjw9#9u3Bs" formControlName="password">
+    <button class="show-pass" (click)="showPass($event)">{{seePassword ? 'hide' : 'show'}}</button>
+
+    <mat-error *ngIf="form.get('password')?.invalid">{{getErrorMessage('password')}}</mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" class="submit">Login</button>
+
+  <mat-error *ngIf="!isUserExists">User not exists</mat-error>
+</form>

@@ -1,0 +1,7 @@
+<div>
+  <img src="./assets/images/test-task-logo.png" alt="Logo" routerLink="">
+  <a mat-stroked-button routerLink="users" routerLinkActive="active">Users</a>
+
+  <a mat-stroked-button routerLink="login" routerLinkActive="active" *ngIf="!isUserLogin">Login</a>
+  <a mat-stroked-button routerLink="login/out" routerLinkActive="active" *ngIf="isUserLogin">Logout</a>
+</div>

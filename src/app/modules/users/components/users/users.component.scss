@@ -1,0 +1,22 @@
+div.actions {
+  a, button {
+    margin: 5px;
+  }
+}
+
+div.user-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media screen and (max-width: 712px) {
+  div.user-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  div.user-container {
+    grid-template-columns: 1fr;
+  }
+}
